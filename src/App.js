@@ -19,7 +19,7 @@ function App() {
         <div>
             <Navbar />
             <Connexion />
-            <section>ok
+            <section>
             </section>
         </div>
     )
