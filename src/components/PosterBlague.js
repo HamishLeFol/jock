@@ -6,7 +6,7 @@ function PosterBlagueModule() {
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
-                        <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name">
+                        <form action="" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name">
                             <div class="row">
                                 <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling
                                     out the form!</div>
@@ -16,18 +16,30 @@ function PosterBlagueModule() {
                             <div class="dragArea row">
                                 <div class="col-12">
                                     <h1 class="mbr-section-title mb-4 mbr-fonts-style align-center display-2">
-                                        <strong>Partagez votre blague.</strong><br/><strong><br/></strong></h1>
+                                        <strong>Partagez votre restaurant.</strong><br /><strong><br /></strong></h1>
                                 </div>
                                 <div class="col-12">
 
                                 </div>
-                                <div class="col-md col-12 form-group mb-3" data-for="name">
-                                    <input type="text" name="name" placeholder="Name" data-form-field="Name" class="form-control" id="name-form1-k"/>
+                                <div class="col-lg-12 col-md col-12 form-group mb-3" data-for="name">
+                                    <input type="text" name="name" placeholder="Nom" data-form-field="Name" class="form-control" id="name-form1-k" />
                                 </div>
-                                <div class="col-md col-12 form-group mb-3" data-for="email">
-                                    <input type="email" name="email" placeholder="Email" data-form-field="Email" class="form-control" id="email-form1-k"/>
+                                <div class="col-lg-12 col-md col-12 form-group mb-3" data-for="city">
+                                    <input type="text" name="city" placeholder="Ville" data-form-field="city" class="form-control" id="city-form1-k" />
                                 </div>
-                                <div class="mbr-section-btn col-12 col-md-auto"><button type="submit" class="btn btn-primary display-4">Subscribe</button></div>
+                                <div class="col-lg-12 col-md col-12 form-group mb-3" data-for="postal_code">
+                                    <input type="text" name="postal_code" placeholder="Code Postal" data-form-field="postal_code" class="form-control" id="postal_code-form1-k" />
+                                </div>
+                                <div class="col-lg-12 col-md col-12 form-group mb-3" data-for="number">
+                                    <input type="text" name="number" placeholder="Numéro de rue" data-form-field="number" class="form-control" id="number-form1-k" />
+                                </div>
+                                <div className="col-lg-12 col-md col-12 form-group mb-3" data-for="street">
+                                    <input type="text" name="name" placeholder="Rue" data-form-field="street" className="form-control" id="street-form1-k" />
+                                </div>
+                                <div className="col-lg-12 col-md col-12 form-group mb-3" data-for="complement">
+                                    <input type="text" name="complement" placeholder="Complément" data-form-field="complement" className="form-control" id="complement-form1-k" />
+                                </div>
+                                <div class="mbr-section-btn col-12 col-md-auto"><button type="submit" class="btn btn-primary display-4">Poster</button></div>
                             </div>
                         </form>
                     </div>
@@ -39,9 +51,9 @@ function PosterBlagueModule() {
 
 export default function posterBlaguePage() {
     return (
-    <div>
-        <PosterBlagueModule />
-        
-    </div>
+        <div>
+            <PosterBlagueModule />
+
+        </div>
     )
 }
