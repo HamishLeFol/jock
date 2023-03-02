@@ -11,7 +11,7 @@ function ConnexionModule() {
     useEffect(() => {
         const fetchData = async () => {
             const result  = await axios(
-                'http://localhost/api',
+                'http://localhost:8000/GetUsersJson',
             );
             setData(result.data);
         };
@@ -48,6 +48,13 @@ function ConnexionModule() {
                         <div className="col-12 col-md-auto mbr-section-btn"><button type="submit" className="btn btn-primary display-4">Submit</button></div>
                     </div>
                 </form>
+                <ul>
+                    {data.map(item => {
+                        <li key={item.id}>
+                            {item.pseudo}
+                        </li>
+                    })}
+                </ul>
             </div>
         </section>
     )
