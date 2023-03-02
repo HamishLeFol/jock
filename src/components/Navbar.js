@@ -1,6 +1,6 @@
 import React from "react"
 import Connexion from "./Connexion.js"
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 function testCo(){
     window.location.href = "Connexion"
