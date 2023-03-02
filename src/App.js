@@ -1,27 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-<<<<<<< Updated upstream
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-=======
 //import React from "react"
 import Navbar from "./components/Navbar.js"
 import Connexion from "./components/Connexion.js"
@@ -38,7 +16,6 @@ import "./assets/theme/css/style.css";
 import "./assets/mobirise/css/mbr-additional.css"
 
 
-
 function App() {    
     return (
         <div>
@@ -49,7 +26,6 @@ function App() {
             </section>
         </div>
     )
->>>>>>> Stashed changes
 }
 
 export default App;
