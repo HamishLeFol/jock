@@ -1,7 +1,25 @@
 //import React from "react"
+import axios from 'axios';
+import {useState, useEffect} from 'react';
+
 
 
 function ConnexionModule() {
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const result  = await axios(
+                'http://localhost/api',
+            );
+            setData(result.data);
+        };
+        fetchData();
+
+    }, []);
+
+
     return (
         <section data-bs-version="5.1" className="form4 cid-tsEejxwI9g" id="form4-h">
         <div className="col-lg-3 offset-lg-1 mbr-form" data-form-type="formoid">
