@@ -1,5 +1,37 @@
+import axios from 'axios';
 
-function PosterBlagueModule() {
+function handleSubmit(event) {
+    event.preventDefault();
+    
+    const name = event.target.elements.name.value;
+    const city = event.target.elements.city.value;
+    const postalCode = event.target.elements.postal_code.value;
+    const number = event.target.elements.number.value;
+    const street = event.target.elements.street.value;
+    const complement = event.target.elements.complement.value;
+
+    axios.post('https://localhost:8000/addRestoJson',
+    {name,
+    city,
+    postalCode,
+    number,
+    street,
+    complement,
+  })
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+}
+function PosterRestoModule() {
+
+const postData = async (url = '', data = {}) => {
+
+  return response.data;
+};
+
 
     return (
         <section data-bs-version="5.1" class="form1 cid-tsJloPgkBa mbr-fullscreen" id="form1-k">
@@ -49,10 +81,10 @@ function PosterBlagueModule() {
     )
 }
 
-export default function posterBlaguePage() {
+export default function posterRestoPage() {
     return (
         <div>
-            <PosterBlagueModule />
+            <PosterRestoModule />
 
         </div>
     )
