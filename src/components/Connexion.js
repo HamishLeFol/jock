@@ -26,6 +26,7 @@ function ConnexionModule() {
                         </div>
                         <div className="col-lg-12 col-md col-12 form-group mb-3" data-for="password">
                             <input type="password" name="password" placeholder="mot de passe" data-form-field="password" className="form-control" id="psswd-form4-h" />
+
                         </div>
                         <div className="col-12 col-md-auto mbr-section-btn"><button type="submit" className="btn btn-primary display-4">Submit</button></div>
                     </div>
