@@ -1,5 +1,4 @@
 
-import logo from './logo.svg';
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import { Switch } from 'react-router-dom'
 
@@ -22,7 +21,8 @@ function App() {
             <Navbar/>
             <PosterBlague />
             <Footer />
-
+        </div>
+)}
 
 
 
