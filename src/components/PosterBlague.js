@@ -10,7 +10,7 @@ function handleSubmit(event) {
     const street = event.target.elements.street ? event.target.elements.street.value : '';
     const complement = event.target.elements.complement ? event.target.elements.complement.value : '';
 
-    axios.post('https://localhost:8000/addRestoJson', {
+    axios.post('https://localhost:8000/AddRestoJson', {
         name,
         city,
         postalCode,
@@ -27,7 +27,7 @@ function handleSubmit(event) {
 }
 function PosterRestoModule() {
 
-    const postData = async (url = 'https://localhost:8000/addRestoJson', data = {}) => {
+    const postData = async (url = 'https://localhost:8000/AddRestoJson', data = {}) => {
         const response = await axios.post(url, data);
         return response.data;
     };

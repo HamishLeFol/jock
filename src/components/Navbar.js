@@ -2,6 +2,9 @@
 import React from "react"
 import Connexion from "./Connexion.js"
 import { Link } from 'react-router-dom';
+import AfficherRestaurant from "./AfficherRestaurant.js"
+
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
 
 function testCo(){
     window.location.href = "Connexion"
@@ -38,9 +41,13 @@ export default function Navbar() {
                                 </div>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link link text-danger display-4" >
+                        <a class="nav-link link text-danger display-4" href="">
                                 <span class="mbri-login mbr-iconfont mbr-iconfont-btn"></span>Connexion</a>
                         </li>
+                     
+
+                            {/* {<Link class="dropdown-item" to="{ name: 'AfficherRestaurant' }">Sign up
+              </Link>} */}
                     </ul>
                     
                     
