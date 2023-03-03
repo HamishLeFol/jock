@@ -1,4 +1,6 @@
 import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import { Switch } from 'react-router-dom'
 import './App.css';
 //import React from "react"
 import Navbar from "./components/Navbar.js"
@@ -8,25 +10,16 @@ import PosterBlague from "./components/PosterBlague.js"
 import Footer from "./components/Footer.js"
 import AfficherRestaurant from "./components/AfficherRestaurant.js"
 
-import "./assets/web/assets/mobirise-icons/mobirise-icons.css";
-import "./assets/bootstrap/css/bootstrap.min.css";
-import "./assets/bootstrap/css/bootstrap-grid.min.css";
-import "./assets/bootstrap/css/bootstrap-reboot.min.css";
-import "./assets/dropdown/css/style.css";
-import "./assets/socicon/css/styles.css";
-import "./assets/theme/css/style.css";
-import "./assets/mobirise/css/mbr-additional.css"
 
 
-function App() {    
+
+function App() {
     return (
         <div>
-            <Navbar />
-            <PosterBlague/>
-            <Footer/>
-            
-            <section>
-            </section>
+            <Navbar/>
+            <PosterBlague />
+            <Footer />
+
         </div>
     )
 }

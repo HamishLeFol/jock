@@ -1,6 +1,6 @@
 import React from "react"
 import Connexion from "./Connexion.js"
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 function testCo(){
     window.location.href = "Connexion"
@@ -25,10 +25,22 @@ export default function Navbar() {
                     </div>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-danger text-primary display-4" href="page1.html">Top Blagues</a></li>
-                        <li class="nav-item dropdown"><a class="nav-link link dropdown-toggle text-danger display-4" href="https://mobiri.se" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Themes</a><div class="dropdown-menu" aria-labelledby="dropdown-undefined"><a class="dropdown-item text-danger display-4" href="https://mobiri.se">New Item</a><a class="dropdown-item text-danger display-4" href="https://mobiri.se">New Item</a><a class="dropdown-item text-danger display-4" href="https://mobiri.se">New Item</a></div></li>
-                        <li class="nav-item"><a class="nav-link link text-danger display-4" href="https://mobiri.se"><span class="mbri-login mbr-iconfont mbr-iconfont-btn"></span>Connexion</a>
-                        </li></ul>
+                    <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+                        <li class="nav-item">
+                            <a class="nav-link link text-danger text-primary display-4" href="page1.html">Top Blagues</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link link dropdown-toggle text-danger display-4" href="https://mobiri.se" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Themes</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown-undefined">
+                                <a class="dropdown-item text-danger display-4" href="https://mobiri.se">New Item</a>
+                                <a class="dropdown-item text-danger display-4" href="https://mobiri.se">New Item</a>
+                                <a class="dropdown-item text-danger display-4" href="https://mobiri.se">New Item</a>
+                                </div>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link link text-danger display-4" >
+                                <span class="mbri-login mbr-iconfont mbr-iconfont-btn"></span>Connexion</a>
+                        </li>
+                    </ul>
                     
                     
                 </div>
