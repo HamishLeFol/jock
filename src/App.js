@@ -6,7 +6,6 @@ import './App.css';
 import Navbar from "./components/Navbar.js"
 import Connexion from "./components/Connexion.js"
 import Inscription from "./components/Inscription.js"
-import PosterBlague from "./components/PosterBlague.js"
 import Footer from "./components/Footer.js"
 import AfficherRestaurant from "./components/AfficherRestaurant.js"
 
@@ -16,9 +15,11 @@ import AfficherRestaurant from "./components/AfficherRestaurant.js"
 function App() {
     return (
         <div>
+
             <Navbar/>
             <PosterBlague />
             <Footer />
+
 
         </div>
     )
