@@ -18,9 +18,13 @@ function App() {
     return (
         <div>
 
+
             <Navbar/>
             <PosterBlague />
             <Footer />
+            <section>
+            </section>
+
         </div>
 )}
 

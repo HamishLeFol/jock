@@ -1,7 +1,30 @@
 //import React from "react"
+import axios from 'axios';
+import {useState, useEffect} from 'react';
+
 
 
 function ConnexionModule() {
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const result  = await axios('https://localhost:8000/GetUsersJson',);
+            // Parcourir les éléments de l'objet avec une boucle for...in
+            for (const key in result.data) {
+                for (const keyy in result.data[key]) {
+                    const element = result.data[key][keyy]['pseudo'];
+                    console.log(element);
+                }
+            }
+            setData(result.data);
+            const tab = result.data['users'][0]['pseudo'];
+            console.log(tab)
+        };
+        fetchData();
+    }, []);
+
     return (
         <section data-bs-version="5.1" className="form4 cid-tsEejxwI9g" id="form4-h">
         <div className="col-lg-3 offset-lg-1 mbr-form" data-form-type="formoid">
@@ -31,6 +54,19 @@ function ConnexionModule() {
                         <div className="col-12 col-md-auto mbr-section-btn"><button type="submit" className="btn btn-primary display-4">Submit</button></div>
                     </div>
                 </form>
+                <ul>
+                    {
+                        function(){
+                            var usersList = [];
+                            for (var i = 0; i < data['users'].length; i++) {
+                                var user = data['users'][i];
+                                usersList.push(<li>{user['pseudo']}</li>);
+                            }
+                            return usersList;
+                        }()
+                    }
+                </ul>
+                
             </div>
         </section>
     )
