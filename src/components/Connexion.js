@@ -39,7 +39,6 @@ export default function ConnexionPage() {
     return (
     <div>
         <ConnexionModule />
-        
     </div>
     )
 }
