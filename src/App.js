@@ -8,6 +8,7 @@ import Connexion from "./components/Connexion.js"
 import Inscription from "./components/Inscription.js"
 import Footer from "./components/Footer.js"
 import AfficherRestaurant from "./components/AfficherRestaurant.js"
+import PosterBlague from './components/PosterBlague';
 
 
 
