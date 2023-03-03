@@ -9,6 +9,7 @@ function ConnexionModule() {
     const [pseudo, setPseudo] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const [data, setData] = useState({users:[]});
     //const history = useNavigate();
 
     const connexion = (event) => {
@@ -29,7 +30,22 @@ function ConnexionModule() {
                 setErrorMessage("erreur d'identification : "+error);
                 setPseudo('');
                 setPassword('');
-            });    
+        });    
+
+        const fetchData = async () => {
+            const result  = await axios('https://localhost:8000/GetUsersJson',);
+            // Parcourir les éléments de l'objet avec une boucle for...in
+            for (const key in result.data) {
+                for (const keyy in result.data[key]) {
+                    const element = result.data[key][keyy]['pseudo'];
+                    console.log(element);
+                }
+            }
+            setData(result.data);
+            const tab = result.data['users'][0]['pseudo'];
+            console.log(tab)
+        };
+        fetchData();    
 
     };    
 
@@ -60,7 +76,16 @@ function ConnexionModule() {
                         <div className="col-12 col-md-auto mbr-section-btn">*
                             <button type="submit" className="btn btn-primary display-4">Submit</button>
                         </div>
-                        
+                        {
+                        function(){
+                            var usersList = [];
+                            for (var i = 0; i < data['users'].length; i++) {
+                                var user = data['users'][i];
+                                usersList.push(<li>{user['pseudo']}</li>);
+                            }
+                            return usersList;
+                        }()
+                    }
                         
                         
                     </div>
