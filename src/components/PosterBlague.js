@@ -2,35 +2,35 @@ import axios from 'axios';
 
 function handleSubmit(event) {
     event.preventDefault();
-    
-    const name = event.target.elements.name.value;
-    const city = event.target.elements.city.value;
-    const postalCode = event.target.elements.postal_code.value;
-    const number = event.target.elements.number.value;
-    const street = event.target.elements.street.value;
-    const complement = event.target.elements.complement.value;
 
-    axios.post('https://localhost:8000/addRestoJson',
-    {name,
-    city,
-    postalCode,
-    number,
-    street,
-    complement,
-  })
-  .then((response) => {
-    console.log(response.data);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+    const name = event.target.elements.name ? event.target.elements.name.value : '';
+    const city = event.target.elements.city ? event.target.elements.city.value : '';
+    const postalCode = event.target.elements.postal_code ? event.target.elements.postal_code.value : '';
+    const number = event.target.elements.number ? event.target.elements.number.value : '';
+    const street = event.target.elements.street ? event.target.elements.street.value : '';
+    const complement = event.target.elements.complement ? event.target.elements.complement.value : '';
+
+    axios.post('https://localhost:8000/addRestoJson', {
+        name,
+        city,
+        postalCode,
+        number,
+        street,
+        complement,
+    })
+        .then((response) => {
+            console.log(response.data);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
 }
 function PosterRestoModule() {
 
-const postData = async (url = '', data = {}) => {
-
-  return response.data;
-};
+    const postData = async (url = 'https://localhost:8000/addRestoJson', data = {}) => {
+        const response = await axios.post(url, data);
+        return response.data;
+    };
 
 
     return (
@@ -38,7 +38,7 @@ const postData = async (url = '', data = {}) => {
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
-                        <form action="" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name">
+                        <form onSubmit={handleSubmit} class="mbr-form form-with-styler" data-form-title="Form Name">
                             <div class="row">
                                 <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling
                                     out the form!</div>

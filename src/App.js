@@ -6,6 +6,7 @@ import Connexion from "./components/Connexion.js"
 import Inscription from "./components/Inscription.js"
 import PosterBlague from "./components/PosterBlague.js"
 import Footer from "./components/Footer.js"
+import AfficherRestaurant from "./components/AfficherRestaurant.js"
 
 import "./assets/web/assets/mobirise-icons/mobirise-icons.css";
 import "./assets/bootstrap/css/bootstrap.min.css";
