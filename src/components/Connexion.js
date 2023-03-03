@@ -1,34 +1,43 @@
 //import React from "react"
 import axios from 'axios';
-import {useState, useEffect} from 'react';
-
+import { useState } from 'react';
+import {useNavigate} from 'react-router-dom';
 
 
 function ConnexionModule() {
 
-    const [data, setData] = useState([]);
+    const [pseudo, setPseudo] = useState('');
+    const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+    //const history = useNavigate();
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const result  = await axios('https://localhost:8000/GetUsersJson',);
-            // Parcourir les éléments de l'objet avec une boucle for...in
-            for (const key in result.data) {
-                for (const keyy in result.data[key]) {
-                    const element = result.data[key][keyy]['pseudo'];
-                    console.log(element);
+    const connexion = (event) => {
+        const loginData = {
+            pseudo: pseudo,
+            password: password
+        }
+        axios.post('https://localhost:8000/Login', loginData)
+            .then(response => {
+                const authToken = response.data.token;
+                console.log("connexion effectué");
+                if(authToken){
+                    localStorage.setItem('token', authToken);//sauvegarde du token
+                    //history.push('/dashboard');//changement de page
                 }
-            }
-            setData(result.data);
-            const tab = result.data['users'][0]['pseudo'];
-            console.log(tab)
-        };
-        fetchData();
-    }, []);
+                console.log("auth token = "+localStorage.getItem('token'));
+            }).catch(error => {
+                setErrorMessage("erreur d'identification : "+error);
+                setPseudo('');
+                setPassword('');
+            });    
+
+    };    
+
 
     return (
         <section data-bs-version="5.1" className="form4 cid-tsEejxwI9g" id="form4-h">
         <div className="col-lg-3 offset-lg-1 mbr-form" data-form-type="formoid">
-                <form action="https://mobirise.eu/" method="POST" className="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="N1HBD6a1BAMxAaBSOgGLGDJ5gbVkBJVzCnYLeGwbd1aWrsOxypybtAsG65/XmsKoeLqisgAQVoER+ijw7yHr19eEo0CRTtZosDhU9vYplXhmYnKS7Wbzrn+Z2L2l2YXm" />
+                <form onSubmit={connexion} className="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="N1HBD6a1BAMxAaBSOgGLGDJ5gbVkBJVzCnYLeGwbd1aWrsOxypybtAsG65/XmsKoeLqisgAQVoER+ijw7yHr19eEo0CRTtZosDhU9vYplXhmYnKS7Wbzrn+Z2L2l2YXm" />
                     <div className="row">
                         <div hidden="hidden" data-form-alert="" className="alert alert-success col-12">Thanks for filling
                             out the form!</div>
@@ -45,27 +54,23 @@ function ConnexionModule() {
                                 Inscrivez vous.<br /></p>
                         </div>
                         <div className="col-lg-12 col-md col-12 form-group mb-3" data-for="name">
-                            <input type="text" name="name" placeholder="pseudo" data-form-field="name" className="form-control" id="name-form4-h" />
+                            <input type="text" name="pseudo" value={pseudo} placeholder="pseudo" data-form-field="name" className="form-control" id="pseudo-form4-h" />
                         </div>
                         <div className="col-lg-12 col-md col-12 form-group mb-3" data-for="email">
-                            <input type="password" name="email" placeholder="mot de passe" data-form-field="email" className="form-control" id="email-form4-h" />
+                            <input type="password" name="password" value={password} placeholder="mot de passe" data-form-field="password" className="form-control" id="password-form4-h" />
                         </div>
+
+                        {errorMessage && <div>{errorMessage}</div>}
+
                         <div className="col-12 col-md-auto mbr-section-btn"><button type="submit" className="btn btn-primary display-4">Submit</button></div>
+                        
+                        
+                        
                     </div>
-                </form>
-                <ul>
-                    {
-                        function(){
-                            var usersList = [];
-                            for (var i = 0; i < data['users'].length; i++) {
-                                var user = data['users'][i];
-                                usersList.push(<li>{user['pseudo']}</li>);
-                            }
-                            return usersList;
-                        }()
-                    }
-                </ul>
-                
+                </form> 
+            </div>
+            <div>
+                token récup = {localStorage.getItem('token')}
             </div>
         </section>
     )
@@ -75,7 +80,6 @@ export default function ConnexionPage() {
     return (
     <div>
         <ConnexionModule />
-        
     </div>
     )
 }

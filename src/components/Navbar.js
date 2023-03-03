@@ -3,10 +3,10 @@
 export default function Navbar() {
     return (
         <nav>
-            <div className="nav-gauche">Blague à part</div>
+            <div className="nav-gauche">Restaurant à part</div>
             <div className="nav-droite">
                 <ul>
-                    <li>Top blagues</li>
+                    <li>Restaurant</li>
                     <li>Themes</li>
                     <li>Connexion</li>
                 </ul>
